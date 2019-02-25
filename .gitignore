@@ -1,1 +1,14 @@
 Vtk_Demo/Vtk_Demo.v11.suo
+Vtk_Demo/Vtk_Demo.opensdf
+Vtk_Demo/Vtk_Demo.sdf
+Vtk_Demo/Vtk_Demo/data/
+*.tlog
+*.obj
+*.pdb
+*.user
+*.idb
+*.lastbuildstate
+*.log
+*.ilk
+Vtk_Demo/Debug/Vtk_Demo.exe
+*.pch
