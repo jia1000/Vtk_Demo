@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\GinkgoCADx-3.7.1.1573.41_dev\source\curl-7.53.1\include;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\IO;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Graphics;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Rendering;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Filtering;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Common;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\VolumeRendering;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Imaging;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Hybrid;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Widgets;.\\fourview;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\GinkgoCADx-3.7.1.1573.41_dev\source\curl-7.53.1\include;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\IO;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Graphics;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Rendering;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Filtering;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Common;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\VolumeRendering;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Imaging;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Hybrid;E:\GinkgoCADx-3.7.1.1573.41_dev\source\VTK-5.10.1\Widgets;F:\dev_study\vtk_study\Vtk_Demo\Vtk_Demo\Vtk_Demo;.\fourview;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -86,6 +86,7 @@
     <ClInclude Include="SplitView.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="vtk_command\vtkDicomInfoCallback.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="demo_code.cpp" />
@@ -96,6 +97,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="vtk_command\vtkDicomInfoCallback.cpp" />
     <ClCompile Include="Vtk_Demo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

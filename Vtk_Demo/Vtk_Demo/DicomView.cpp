@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "DicomView.h"
+#include "vtk_command/vtkDicomInfoCallback.h"
+
 
 //////////////////////////////////////////////////////////////////////////
 class  StatusMessage
@@ -221,7 +223,7 @@ void MyCallbackFunc(vtkObject* obj, unsigned long eid, void* clientdata, void* c
     static int pressCount = 0;
     pressCount++;
     printf("Clicked: %4d-%s\n", pressCount, client_data.c_str());;
-}
+} 
 
 void CDicomView::ShowDicomFile(std::string folder)
 {
@@ -259,12 +261,16 @@ void CDicomView::ShowDicomFile(std::string folder)
     m_imageViewer->SetupInteractor(renderWindowInteractor);
     renderWindowInteractor->SetInteractorStyle(myInteractorStyle);
 
-    // 添加事件回调Command
-    vtkSmartPointer<vtkCallbackCommand> mouseCallback = vtkSmartPointer<vtkCallbackCommand>::New();
-    mouseCallback->SetCallback(MyCallbackFunc);
-    std::string client_data = "haha";
-    //int client_data = 111111;
-    mouseCallback->SetClientData((void*)&client_data);
+    // 添加事件回调Command--第一种方式
+    //vtkSmartPointer<vtkCallbackCommand> mouseCallback = vtkSmartPointer<vtkCallbackCommand>::New();
+    //mouseCallback->SetCallback(MyCallbackFunc);
+    //std::string client_data = "haha";
+    ////int client_data = 111111;
+    //mouseCallback->SetClientData((void*)&client_data);
+    //renderWindowInteractor->AddObserver(vtkCommand::LeftButtonPressEvent, mouseCallback);
+
+    // 添加事件回调Command--第二种方式
+    vtkSmartPointer<vtkDicomInfoCallback> mouseCallback = vtkSmartPointer<vtkDicomInfoCallback>::New();    
     renderWindowInteractor->AddObserver(vtkCommand::LeftButtonPressEvent, mouseCallback);
 
     m_imageViewer->GetRenderWindow()->SetSize(800, 600);
