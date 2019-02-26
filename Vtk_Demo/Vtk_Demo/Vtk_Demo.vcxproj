@@ -81,6 +81,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DicomSplitView.h" />
     <ClInclude Include="DicomView.h" />
     <ClInclude Include="SplitView.h" />
     <ClInclude Include="stdafx.h" />
@@ -88,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="demo_code.cpp" />
+    <ClCompile Include="DicomSplitView.cpp" />
     <ClCompile Include="DicomView.cpp" />
     <ClCompile Include="SplitView.cpp" />
     <ClCompile Include="stdafx.cpp">

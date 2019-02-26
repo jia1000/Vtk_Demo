@@ -52,6 +52,8 @@
 
 
 #include <vtkImageCanvasSource2D.h>
-
+#include <vtkContourFilter.h>
+#include <vtkPolyDataNormals.h>
+#include <vtkImageMapToWindowLevelColors.h>
 
 // TODO: 在此处引用程序需要的其他头文件
