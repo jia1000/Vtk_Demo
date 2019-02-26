@@ -50,4 +50,8 @@
 #include <vtkTextProperty.h>
 #include <vtkActor2D.h>
 
+
+#include <vtkImageCanvasSource2D.h>
+
+
 // TODO: 在此处引用程序需要的其他头文件
