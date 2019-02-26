@@ -30,7 +30,7 @@ CDicomSplitView::CDicomSplitView(void)
     m_render_right_up->SetViewport(0.5,0.5,1.0,1.0);
 
 
-    vtkSmartPointer<vtkRenderWindow> renWin=vtkSmartPointer<vtkRenderWindow>::New();
+    vtkSmartPointer<vtkRenderWindow> renWin = vtkSmartPointer<vtkRenderWindow>::New();
     renWin->AddRenderer(m_render_left_down );
     renWin->AddRenderer(m_render_left_up   );
     renWin->AddRenderer(m_render_right_down);
@@ -41,6 +41,11 @@ CDicomSplitView::CDicomSplitView(void)
 
     vtkSmartPointer<vtkRenderWindowInteractor> interactor = vtkSmartPointer<vtkRenderWindowInteractor>::New();
     interactor->SetRenderWindow(renWin);
+
+    // 设置交互器的风格为Image，会比默认的3D风格，缺少旋转等功能.
+    vtkSmartPointer<vtkInteractorStyleImage> interactorStyle = vtkSmartPointer<vtkInteractorStyleImage>::New();
+    interactor->SetInteractorStyle(interactorStyle);
+
 
     renWin->Render();
     interactor->Initialize();
