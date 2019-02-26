@@ -11,22 +11,22 @@ CDicomSplitView::CDicomSplitView(void)
     m_reader->Update();
 
     // 创建一个拆2*2布局的窗口
-    m_render_left_down  = CreateVtkRender();
+    m_render_left_down  = CreateDicomVtkRender();
     m_render_left_up    = CreateDicomVtkRender();
-    m_render_right_down = CreateVtkRender();//CreateDicomRibVtkRender();
-    m_render_right_up   = CreateVtkRender();
+    m_render_right_down = CreateDicomVtkRender();//CreateDicomRibVtkRender();
+    m_render_right_up   = CreateDicomVtkRender();
 
     // 左下图像
-    m_render_left_down->SetBackground(1.0,1.0,1.0);
+    m_render_left_down->SetBackground(0.3,0.3,0.3);
     m_render_left_down->SetViewport(0.0,0.0,0.5,0.5);
     // 右下图像
-    m_render_right_down->SetBackground(0.0,1.0,0.0);
+    m_render_right_down->SetBackground(0.4,0.4,0.4);
     m_render_right_down->SetViewport(0.5,0.0,1.0,0.5);
     // 左上图像
-    m_render_left_up->SetBackground(0.0,0.0,1.0);
+    m_render_left_up->SetBackground(0.5,0.5,0.5);
     m_render_left_up->SetViewport(0.0,0.5,0.5,1.0);
     // 右上图像
-    m_render_right_up->SetBackground(1.0,1.0,0.0);
+    m_render_right_up->SetBackground(0.6,0.6,0.6);
     m_render_right_up->SetViewport(0.5,0.5,1.0,1.0);
 
 
