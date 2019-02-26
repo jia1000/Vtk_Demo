@@ -4,13 +4,12 @@
 #include "stdafx.h"
 
 #include "SplitView.h"
-#include "DicomSplitView.h"
+#include "DicomView.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-    CDicomSplitView view;
+    CDicomView view;
     view.ShowDicomFile(".\\data\\slices1");
-    
     
 	return 0;
 }

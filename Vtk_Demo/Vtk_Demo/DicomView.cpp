@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "DicomSplitView.h"
+#include "DicomView.h"
 
 //////////////////////////////////////////////////////////////////////////
 class  StatusMessage
@@ -114,18 +114,18 @@ protected:
 
 vtkStandardNewMacro(myvtkInteractorStyleImage);
 //////////////////////////////////////////////////////////////////////////
-CDicomSplitView::CDicomSplitView(void)
+CDicomView::CDicomView(void)
 {
     m_imageViewer = vtkSmartPointer<vtkImageViewer2>::New();
 }
 
 
-CDicomSplitView::~CDicomSplitView(void)
+CDicomView::~CDicomView(void)
 {
 }
 
 
-vtkSmartPointer<vtkTextMapper> CDicomSplitView::SetLeftDownTextAnonationMapper(vtkSmartPointer<vtkImageViewer2> imageViewer)
+vtkSmartPointer<vtkTextMapper> CDicomView::SetLeftDownTextAnonationMapper(vtkSmartPointer<vtkImageViewer2> imageViewer)
 {
     vtkSmartPointer<vtkTextProperty> sliceTextProp = vtkSmartPointer<vtkTextProperty>::New();
     sliceTextProp->SetFontFamilyToCourier();
@@ -157,7 +157,7 @@ vtkSmartPointer<vtkTextMapper> SetLeftUpTextAnonationMapper()
     return usageTextMapper;
 }
 
-vtkSmartPointer<vtkTextMapper> CDicomSplitView::SetRightDownTextAnonationMapper(vtkSmartPointer<vtkImageViewer2> imageViewer)
+vtkSmartPointer<vtkTextMapper> CDicomView::SetRightDownTextAnonationMapper(vtkSmartPointer<vtkImageViewer2> imageViewer)
 {
     vtkSmartPointer<vtkTextProperty> sliceTextProp = vtkSmartPointer<vtkTextProperty>::New();
     sliceTextProp->SetFontFamilyToCourier();
@@ -184,7 +184,7 @@ vtkSmartPointer<vtkTextMapper> CDicomSplitView::SetRightDownTextAnonationMapper(
     return sliceTextMapper;
 }
 
-void CDicomSplitView::AddLeftDownSliceTextActor(vtkSmartPointer<vtkTextMapper> sliceTextMapper)
+void CDicomView::AddLeftDownSliceTextActor(vtkSmartPointer<vtkTextMapper> sliceTextMapper)
 {
     vtkSmartPointer<vtkActor2D> sliceTextActor = vtkSmartPointer<vtkActor2D>::New();
     sliceTextActor->SetMapper(sliceTextMapper);
@@ -192,7 +192,7 @@ void CDicomSplitView::AddLeftDownSliceTextActor(vtkSmartPointer<vtkTextMapper> s
 
     m_imageViewer->GetRenderer()->AddActor2D(sliceTextActor);
 }
-void CDicomSplitView::AddRightDownSliceTextActor(vtkSmartPointer<vtkTextMapper> sliceTextMapper)
+void CDicomView::AddRightDownSliceTextActor(vtkSmartPointer<vtkTextMapper> sliceTextMapper)
 {
     vtkSmartPointer<vtkActor2D> sliceTextActor = vtkSmartPointer<vtkActor2D>::New();
     sliceTextActor->SetMapper(sliceTextMapper);
@@ -200,7 +200,7 @@ void CDicomSplitView::AddRightDownSliceTextActor(vtkSmartPointer<vtkTextMapper> 
 
     m_imageViewer->GetRenderer()->AddActor2D(sliceTextActor);
 }
-void CDicomSplitView::AddLeftUpTextActor(vtkSmartPointer<vtkTextMapper> usageTextMapper)
+void CDicomView::AddLeftUpTextActor(vtkSmartPointer<vtkTextMapper> usageTextMapper)
 {
     vtkSmartPointer<vtkActor2D> usageTextActor = vtkSmartPointer<vtkActor2D>::New();
     usageTextActor->SetMapper(usageTextMapper);
@@ -210,7 +210,7 @@ void CDicomSplitView::AddLeftUpTextActor(vtkSmartPointer<vtkTextMapper> usageTex
     m_imageViewer->GetRenderer()->AddActor2D(usageTextActor);
 }
 
-void CDicomSplitView::ShowDicomFile(std::string folder)
+void CDicomView::ShowDicomFile(std::string folder)
 {
     //std::string folder = ".\\data\\slices";
     m_reader = vtkSmartPointer<vtkDICOMImageReader>::New();

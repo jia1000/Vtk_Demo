@@ -2,11 +2,11 @@
 #include <vtkSmartPointer.h>
 #include <vtkImageViewer2.h>
 
-class CDicomSplitView
+class CDicomView
 {
 public:
-    CDicomSplitView(void);
-    ~CDicomSplitView(void);
+    CDicomView(void);
+    ~CDicomView(void);
 
     void ShowDicomFile(std::string folder);
 private:

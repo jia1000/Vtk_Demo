@@ -27,7 +27,7 @@
     <ClInclude Include="SplitView.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="DicomSplitView.h">
+    <ClInclude Include="DicomView.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,7 +44,7 @@
     <ClCompile Include="SplitView.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DicomSplitView.cpp">
+    <ClCompile Include="DicomView.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
