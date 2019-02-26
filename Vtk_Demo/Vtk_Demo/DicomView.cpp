@@ -210,6 +210,19 @@ void CDicomView::AddLeftUpTextActor(vtkSmartPointer<vtkTextMapper> usageTextMapp
     m_imageViewer->GetRenderer()->AddActor2D(usageTextActor);
 }
 
+// 事件回调Comand的处理函数
+// 第一个参数：obj：是调用事件的对象，本例中，即为interactor
+// 第二个参数：eid：所要监听的事件ID
+// 第三个参数：是与vtkCallbackCommand实例相关联的数据。可以通过vtkCallbackCommand::SetClientData函数设置
+void MyCallbackFunc(vtkObject* obj, unsigned long eid, void* clientdata, void* calldata)
+{
+    std::string client_data  = *(std::string*)(clientdata);
+    //int client_data = *((int*)(clientdata));
+    static int pressCount = 0;
+    pressCount++;
+    printf("Clicked: %4d-%s\n", pressCount, client_data.c_str());;
+}
+
 void CDicomView::ShowDicomFile(std::string folder)
 {
     //std::string folder = ".\\data\\slices";
@@ -246,7 +259,14 @@ void CDicomView::ShowDicomFile(std::string folder)
     m_imageViewer->SetupInteractor(renderWindowInteractor);
     renderWindowInteractor->SetInteractorStyle(myInteractorStyle);
 
-    
+    // 添加事件回调Command
+    vtkSmartPointer<vtkCallbackCommand> mouseCallback = vtkSmartPointer<vtkCallbackCommand>::New();
+    mouseCallback->SetCallback(MyCallbackFunc);
+    std::string client_data = "haha";
+    //int client_data = 111111;
+    mouseCallback->SetClientData((void*)&client_data);
+    renderWindowInteractor->AddObserver(vtkCommand::LeftButtonPressEvent, mouseCallback);
+
     m_imageViewer->GetRenderWindow()->SetSize(800, 600);
     m_imageViewer->SetColorWindow(380);
     m_imageViewer->SetColorLevel(30);

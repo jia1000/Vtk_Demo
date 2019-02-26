@@ -35,7 +35,7 @@ CDicomSplitView::CDicomSplitView(void)
     renWin->AddRenderer(m_render_left_up   );
     renWin->AddRenderer(m_render_right_down);
     renWin->AddRenderer(m_render_right_up  );
-    renWin->SetSize( 640, 480 );
+    renWin->SetSize( 800, 600 );
     renWin->Render();
     renWin->SetWindowName("Viewport");
 
@@ -87,6 +87,36 @@ vtkSmartPointer<vtkRenderer> CDicomSplitView::CreateDicomVtkRender()
 
     vtkSmartPointer<vtkRenderer> renderer1 = vtkSmartPointer<vtkRenderer>::New();
     renderer1->AddActor(imageActor);
+
+    /////////////////添加右下角注释，，但是没有起作用/////////////////////////////////////////////////////////
+    //vtkSmartPointer<vtkTextProperty> sliceTextProp = vtkSmartPointer<vtkTextProperty>::New();
+    //sliceTextProp->SetFontFam     ilyToCourier();
+    //sliceTextProp->SetFontSize(10);
+    //sliceTextProp->SetVerticalJustificationToBottom();
+    //sliceTextProp->SetJustificationToRight();
+
+    //vtkSmartPointer<vtkTextMapper> sliceTextMapper = vtkSmartPointer<vtkTextMapper>::New();
+    //std::string msg = "";
+    //msg += "PatientName:";
+    //msg += std::string(m_reader->GetPatientName());
+    //msg += "\n";
+    //msg += "StudyID:";
+    //msg += std::string(m_reader->GetStudyID());
+    ////msg += "\n";
+    ////msg += "ImagePosition:";
+    ////msg += std::string(*(m_reader->GetImagePositionPatient()));
+    ////msg += "\n";
+    ////msg += "Width:";
+    ////msg += StatusMessage::TransferString(m_reader->GetWidth());
+    //sliceTextMapper->SetInput(msg.c_str());
+    //sliceTextMapper->SetTextProperty(sliceTextProp);
+
+    //vtkSmartPointer<vtkActor2D> sliceTextActor = vtkSmartPointer<vtkActor2D>::New();
+    //sliceTextActor->SetMapper(sliceTextMapper);
+    //sliceTextActor->SetPosition(785, 10);
+
+    //renderer1->AddActor2D(sliceTextActor);
+    //////////////////////////////////////////////////////////////////////////
 
     return renderer1;
 }

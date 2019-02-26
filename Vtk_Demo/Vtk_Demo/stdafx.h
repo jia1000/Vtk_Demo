@@ -55,5 +55,8 @@
 #include <vtkContourFilter.h>
 #include <vtkPolyDataNormals.h>
 #include <vtkImageMapToWindowLevelColors.h>
+#include <vtkTextMapper.h>
+#include <vtkCommand.h>
+#include <vtkCallbackCommand.h>
 
 // TODO: 在此处引用程序需要的其他头文件
