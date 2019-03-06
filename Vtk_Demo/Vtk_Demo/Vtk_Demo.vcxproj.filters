@@ -39,7 +39,13 @@
     <ClInclude Include="vtk_command\vtkDicomInfoCallback.h">
       <Filter>vtk_command</Filter>
     </ClInclude>
-    <ClInclude Include="TestWidgetsBase.h">
+    <ClInclude Include="widgets_test\TestWidgetsBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets_test\TextWidgetsTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets_test\CaptionWidgetsTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,7 +71,13 @@
     <ClCompile Include="vtk_command\vtkDicomInfoCallback.cpp">
       <Filter>vtk_command</Filter>
     </ClCompile>
-    <ClCompile Include="TestWidgetsBase.cpp">
+    <ClCompile Include="widgets_test\TestWidgetsBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets_test\TextWidgetsTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets_test\CaptionWidgetsTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

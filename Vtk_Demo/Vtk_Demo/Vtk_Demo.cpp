@@ -6,7 +6,10 @@
 #include "SplitView.h"
 #include "DicomView.h"
 #include "DicomSplitView.h"
-#include "TestWidgetsBase.h"
+#include "widgets_test//TestWidgetsBase.h"
+#include "widgets_test/TextWidgetsTest.h"
+#include "widgets_test/CaptionWidgetsTest.h"
+
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -17,10 +20,13 @@ int _tmain(int argc, _TCHAR* argv[])
     //CDicomSplitView view;
     //return 0;   
     
-    CTestWidgetsBase widgets_test;
-    widgets_test.TextWidgets_Test();
-    return 0;
+    //CTextWidgetsTest widgets_test;
+    //widgets_test.ShowWidgets_Test();
+    //return 0;
 
+    CCaptionWidgetsTest widgets_test;
+    widgets_test.ShowWidgets_Test();
+    return 0;
 
 	return 0;
 }
