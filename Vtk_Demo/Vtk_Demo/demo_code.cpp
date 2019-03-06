@@ -347,3 +347,106 @@ void Example_8_3_2()
         rwi->Start();
     }
 }
+void Example_8_3_3()
+{
+    vtkSmartPointer< vtkUnstructuredGridReader > reader = vtkSmartPointer< vtkUnstructuredGridReader >::New();
+    reader->SetFileName("data.vtk");
+    reader->Update();
+
+    vtkSmartPointer< vtkLookupTable > lut = vtkSmartPointer< vtkLookupTable >::New();
+    lut->Build();
+
+    vtkSmartPointer< vtkDataSetMapper > mapper = vtkSmartPointer< vtkDataSetMapper >::New();
+    mapper->SetInput(reader->GetOutput());
+    mapper->SetScalarRange(reader->GetOutput()->GetScalarRange());
+    mapper->SetLookupTable(lut);
+
+    vtkSmartPointer< vtkActor > actor = vtkSmartPointer< vtkActor >::New();
+    actor->SetMapper(mapper);
+
+    vtkSmartPointer< vtkRenderer > renderer = vtkSmartPointer< vtkRenderer >::New();
+    renderer->AddActor(actor);
+    renderer->SetBackground(1, 1, 1);
+
+    vtkSmartPointer< vtkRenderWindow > renderWindow = vtkSmartPointer< vtkRenderWindow >::New();
+    renderWindow->AddRenderer(renderer);
+    renderWindow->Render();
+    renderWindow->SetWindowName("AnnotationWidget");
+    renderWindow->SetSize(400, 400);
+
+    vtkSmartPointer< vtkRenderWindowInteractor > interactor = 
+        vtkSmartPointer< vtkRenderWindowInteractor >::New();
+    interactor->SetRenderWindow(renderWindow);
+    /********************************************************************************************/
+    //±Í◊¢¿‡≤‚ ‘
+    //////////////////////////// vtkScalarBarWidget
+    vtkSmartPointer< vtkScalarBarActor > scalarBarActor = vtkSmartPointer< vtkScalarBarActor >::New();
+    scalarBarActor->SetOrientationToHorizontal();
+    scalarBarActor->SetLookupTable(lut);
+
+    vtkSmartPointer< vtkScalarBarWidget > scalarBarWidget = vtkSmartPointer< vtkScalarBarWidget >::New();
+    scalarBarWidget->SetInteractor(interactor);
+    scalarBarWidget->SetScalarBarActor(scalarBarActor);
+    scalarBarWidget->On();
+
+    ////////////////////////////vtkTextWidget
+    vtkSmartPointer<vtkTextActor> textActor = vtkSmartPointer<vtkTextActor>::New();
+    textActor->SetInput("VTK Widgets");
+    textActor->GetTextProperty()->SetColor(1, 0, 0);
+
+    vtkSmartPointer<vtkTextWidget> textWidget = vtkSmartPointer<vtkTextWidget>::New();
+    textWidget->SetInteractor(interactor);
+    textWidget->SetTextActor(textActor);
+
+    vtkSmartPointer<vtkTextRepresentation>  textRepresentation =
+        vtkSmartPointer<vtkTextRepresentation>::New();
+    textRepresentation->GetPositionCoordinate()->SetValue(0.15, 0.15);
+    textRepresentation->GetPosition2Coordinate()->SetValue(0.7, 0.2);
+
+    textWidget->SetRepresentation(textRepresentation);
+    textWidget->SelectableOff();
+    textWidget->On();
+
+    ///////////////////////////// vtkOrientationMarkerWidget
+    vtkSmartPointer<vtkAxesActor> iconActor = vtkSmartPointer<vtkAxesActor>::New();
+    vtkSmartPointer<vtkOrientationMarkerWidget> orientationWidget =
+        vtkSmartPointer<vtkOrientationMarkerWidget>::New();
+    orientationWidget->SetOutlineColor(0.9300, 0.5700, 0.1300);
+    orientationWidget->SetInteractor(interactor);
+    orientationWidget->SetOrientationMarker(iconActor);
+    orientationWidget->SetViewport(0.0, 0.0, 0.2, 0.2);
+    orientationWidget->SetEnabled(1);
+    orientationWidget->InteractiveOn();
+
+    //////////////////////////////// vtkCaptionWidget
+    vtkSmartPointer<vtkCaptionWidget> captionWidget = 
+        vtkSmartPointer<vtkCaptionWidget>::New();
+    captionWidget->SetInteractor(interactor);
+
+    vtkSmartPointer<vtkCaptionRepresentation> captionRepresentation =
+        vtkSmartPointer<vtkCaptionRepresentation>::New();
+    captionRepresentation->GetCaptionActor2D()->SetCaption("Caption Widget");
+    captionRepresentation->GetCaptionActor2D()->GetTextActor()->GetTextProperty()->SetFontSize(20);
+
+    double pos[3] = { .5, 0, 0 };
+    captionRepresentation->SetAnchorPosition(pos);
+    captionWidget->SetRepresentation(captionRepresentation);
+    captionWidget->On();
+
+    ///////////////////////////////////////// vtkBalloonWidget
+    vtkSmartPointer<vtkBalloonWidget> balloonWidget =
+        vtkSmartPointer<vtkBalloonWidget>::New();
+    balloonWidget->SetInteractor(interactor);
+
+    vtkSmartPointer<vtkBalloonRepresentation> balloonRep =
+        vtkSmartPointer<vtkBalloonRepresentation>::New();
+    balloonRep->SetBalloonLayoutToImageRight();
+
+    balloonWidget->SetRepresentation(balloonRep);
+    balloonWidget->AddBalloon(actor, "This is a widget example", NULL);
+    balloonWidget->On();
+
+    renderWindow->Render();
+    interactor->Initialize();
+    interactor->Start();
+}

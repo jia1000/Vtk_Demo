@@ -70,4 +70,20 @@
 #include <vtkLeaderActor2D.h>
 #include <vtkProperty2D.h>
 
+#include <vtkUnstructuredGrid.h>
+#include <vtkUnstructuredGridReader.h>
+#include <vtkDataSetMapper.h>
+#include <vtkScalarBarActor.h>
+#include <vtkScalarBarWidget.h>
+#include <vtkTextActor.h>
+#include <vtkTextWidget.h>
+#include <vtkTextRepresentation.h>
+#include <vtkAxesActor.h>
+#include <vtkOrientationMarkerWidget.h>
+#include <vtkBalloonWidget.h>
+#include <vtkBalloonRepresentation.h>
+#include <vtkCaptionWidget.h>
+#include <vtkCaptionRepresentation.h>
+#include <vtkCaptionActor2D.h>
+
 // TODO: 在此处引用程序需要的其他头文件
