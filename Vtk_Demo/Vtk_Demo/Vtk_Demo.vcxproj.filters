@@ -39,6 +39,9 @@
     <ClInclude Include="vtk_command\vtkDicomInfoCallback.h">
       <Filter>vtk_command</Filter>
     </ClInclude>
+    <ClInclude Include="TestWidgetsBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -61,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="vtk_command\vtkDicomInfoCallback.cpp">
       <Filter>vtk_command</Filter>
+    </ClCompile>
+    <ClCompile Include="TestWidgetsBase.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
