@@ -59,4 +59,15 @@
 #include <vtkCommand.h>
 #include <vtkCallbackCommand.h>
 
+
+#include <vtkBiDimensionalWidget.h>
+#include <vtkBiDimensionalRepresentation2D.h>
+#include <vtkImageActor.h>
+#include <vtkDistanceWidget.h>
+#include <vtkDistanceRepresentation.h>
+#include <vtkAngleWidget.h>
+#include <vtkAngleRepresentation2D.h>
+#include <vtkLeaderActor2D.h>
+#include <vtkProperty2D.h>
+
 // TODO: 在此处引用程序需要的其他头文件

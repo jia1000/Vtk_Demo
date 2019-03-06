@@ -9,7 +9,12 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-    CDicomSplitView view;
+    CDicomView view;
+    view.ShowDicomFile(".\\data\\slices1");
+    return 0;
+
+    //CDicomSplitView view;
+    //return 0;   
     
 	return 0;
 }

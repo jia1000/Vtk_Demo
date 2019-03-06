@@ -2,7 +2,40 @@
 #include "DicomView.h"
 #include "vtk_command/vtkDicomInfoCallback.h"
 
+class vtkBiDimensionalCallback: public vtkCommand
+{
+public:
+    static	vtkBiDimensionalCallback*  New()
+    {
+        return new vtkBiDimensionalCallback;
+    }
 
+    virtual void Execute(vtkObject* caller, unsigned long, void*)
+    {
+        vtkBiDimensionalWidget* biDimensionalWidget = reinterpret_cast<vtkBiDimensionalWidget*> (caller);
+        vtkBiDimensionalRepresentation2D* representation = static_cast<vtkBiDimensionalRepresentation2D*> (biDimensionalWidget->GetRepresentation());
+
+        double p1[3];
+        representation->GetPoint1DisplayPosition(p1);
+        double p2[3];
+        representation->GetPoint2DisplayPosition(p2);
+        double p3[3];
+        representation->GetPoint3DisplayPosition(p3);
+        double p4[3];
+        representation->GetPoint4DisplayPosition(p4);
+
+        //显示四个点的屏幕坐标(px)
+        std::cout << "Point: " 
+            << "(" << p1[0] << " " << p1[1] << " " << p1[2] << ")" 
+            << "(" << p2[0] << " " << p2[1] << " " << p2[2] << ")" 
+            << "(" << p3[0] << " " << p3[1] << " " << p3[2] << ")" 
+            << "(" << p4[0] << " " << p4[1] << " " << p4[2] << ")" 
+            << std::endl;
+    }
+    vtkBiDimensionalCallback() { }
+};
+
+//////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 class  StatusMessage
 {
@@ -261,6 +294,21 @@ void CDicomView::ShowDicomFile(std::string folder)
     m_imageViewer->SetupInteractor(renderWindowInteractor);
     renderWindowInteractor->SetInteractorStyle(myInteractorStyle);
 
+    // 添加类似于大小径的Widget
+    {
+	    vtkSmartPointer<vtkBiDimensionalWidget> bidimensionalWidget =
+	        vtkSmartPointer<vtkBiDimensionalWidget>::New();
+	    bidimensionalWidget->SetInteractor(renderWindowInteractor);
+	    //采用默认的图标
+	    bidimensionalWidget->CreateDefaultRepresentation();
+	    //添加“观察者-命令模式（命令子类方案）”
+	    vtkSmartPointer<vtkBiDimensionalCallback> bidiCallback =
+	        vtkSmartPointer<vtkBiDimensionalCallback>::New();
+	    bidimensionalWidget->AddObserver(vtkCommand::InteractionEvent, bidiCallback);
+	    bidimensionalWidget->On();
+    }
+
+
     // 添加事件回调Command--第一种方式
     //vtkSmartPointer<vtkCallbackCommand> mouseCallback = vtkSmartPointer<vtkCallbackCommand>::New();
     //mouseCallback->SetCallback(MyCallbackFunc);
@@ -287,3 +335,4 @@ void CDicomView::ShowDicomFile(std::string folder)
 
     renderWindowInteractor->Start();
 }
+
