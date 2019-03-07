@@ -25,39 +25,6 @@ void CWidgetsBaseTest::ShowWidgets_Test()
     StartWidgetsRender(m_renderer, m_renderWindow, m_interactor);
 }
 
-//void CWidgetsBaseTest::TextWidgets_Test()
-//{
-//    // Create the RenderWindow, Renderer and both Actors
-//    m_renderer        = CreateRenderer();
-//    m_renderWindow    = CreateRenderWindow(m_renderer);
-//    m_interactor      = CreateInteractor(m_renderWindow);
-//    // Create a test pipeline
-//    CreateTextPipeline(m_renderer);
-//    // Create the widget
-//    AddTextActor(m_interactor);
-//        
-//    StartTextWidgetsRender(m_renderer, m_renderWindow, m_interactor);
-//}
-
-//void CWidgetsBaseTest::CaptionWidgets_Test()
-//{
-//    // Create the RenderWindow, Renderer and both Actors
-//    m_renderer        = CreateRenderer();
-//    m_renderWindow    = CreateRenderWindow(m_renderer);
-//    m_interactor      = CreateInteractor(m_renderWindow);
-//    // Create a test pipeline
-//    CreateCaptionPipeline(m_renderer);
-//    // Create the widget
-//    AddCaptionActor(m_interactor);
-//
-//    StartCaptionWidgetsRender(m_renderer, m_renderWindow, m_interactor);
-//
-//}
-
-
-
-
-
 vtkSmartPointer<vtkRenderer> CWidgetsBaseTest::CreateRenderer()
 {
     vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
