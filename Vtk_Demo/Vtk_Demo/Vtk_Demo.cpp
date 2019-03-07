@@ -11,6 +11,8 @@
 #include "widgets_test/CaptionWidgetsTest.h"
 #include "widgets_test/BoxWidgetsTest.h"
 #include "widgets_test/ContourWidgetsTest.h"
+#include "widgets_test/ImageWidgetsTest.h"
+
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -33,7 +35,11 @@ int _tmain(int argc, _TCHAR* argv[])
     //widgets_test.ShowWidgets_Test();
     //return 0;
 
-    CContourWidgetsTest widgets_test;
+    //CContourWidgetsTest widgets_test;
+    //widgets_test.ShowWidgets_Test();
+    //return 0;
+
+    CImageWidgetsTest widgets_test;
     widgets_test.ShowWidgets_Test();
     return 0;
 
