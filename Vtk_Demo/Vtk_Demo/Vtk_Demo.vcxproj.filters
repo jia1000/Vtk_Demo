@@ -51,6 +51,9 @@
     <ClInclude Include="widgets_test\BoxWidgetsTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="widgets_test\ContourWidgetsTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -84,6 +87,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="widgets_test\BoxWidgetsTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets_test\ContourWidgetsTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -91,4 +91,9 @@
 #include <vtkLinearTransform.h>
 #include <vtkProp3D.h>
 #include <vtkTransform.h>
+
+#include <vtkContourWidget.h>
+#include <vtkOrientedGlyphContourRepresentation.h>
+#include <vtkMath.h>
+#include <vtkCellArray.h>
 // TODO: 在此处引用程序需要的其他头文件
