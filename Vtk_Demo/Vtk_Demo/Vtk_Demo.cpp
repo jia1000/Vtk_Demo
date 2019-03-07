@@ -9,7 +9,7 @@
 #include "widgets_test//TestWidgetsBase.h"
 #include "widgets_test/TextWidgetsTest.h"
 #include "widgets_test/CaptionWidgetsTest.h"
-
+#include "widgets_test/BoxWidgetsTest.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -24,7 +24,11 @@ int _tmain(int argc, _TCHAR* argv[])
     //widgets_test.ShowWidgets_Test();
     //return 0;
 
-    CCaptionWidgetsTest widgets_test;
+    //CCaptionWidgetsTest widgets_test;
+    //widgets_test.ShowWidgets_Test();
+    //return 0;
+
+    CBoxWidgetsTest widgets_test;
     widgets_test.ShowWidgets_Test();
     return 0;
 

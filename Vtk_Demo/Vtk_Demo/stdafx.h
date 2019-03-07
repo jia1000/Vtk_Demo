@@ -86,4 +86,9 @@
 #include <vtkCaptionRepresentation.h>
 #include <vtkCaptionActor2D.h>
 
+
+#include <vtkBoxWidget.h>
+#include <vtkLinearTransform.h>
+#include <vtkProp3D.h>
+#include <vtkTransform.h>
 // TODO: 在此处引用程序需要的其他头文件

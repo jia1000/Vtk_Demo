@@ -17,6 +17,7 @@ void CWidgetsBaseTest::ShowWidgets_Test()
     m_renderer        = CreateRenderer();
     m_renderWindow    = CreateRenderWindow(m_renderer);
     m_interactor      = CreateInteractor(m_renderWindow);
+    SetMyInteractorStyle(m_interactor);
     // Create a test pipeline
     CreatePipeline(m_renderer);
     // Create the widget
