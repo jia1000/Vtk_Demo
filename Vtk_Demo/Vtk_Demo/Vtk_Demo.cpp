@@ -12,16 +12,17 @@
 #include "widgets_test/BoxWidgetsTest.h"
 #include "widgets_test/ContourWidgetsTest.h"
 #include "widgets_test/ImageWidgetsTest.h"
-
+#include "widgets_test/Rib3DView.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+#if 1
     //CDicomView view;
     //view.ShowDicomFile(".\\data\\slices1");
     //return 0;
 
     //CDicomSplitView view;
-    //return 0;   
+    //return 0;
     
     //CTextWidgetsTest widgets_test;
     //widgets_test.ShowWidgets_Test();
@@ -39,10 +40,14 @@ int _tmain(int argc, _TCHAR* argv[])
     //widgets_test.ShowWidgets_Test();
     //return 0;
 
-    CImageWidgetsTest widgets_test;
+    //CImageWidgetsTest widgets_test;
+    //widgets_test.ShowWidgets_Test();
+    //return 0;
+
+    Rib3DView widgets_test;
     widgets_test.ShowWidgets_Test();
     return 0;
-
+#endif 
 
 	return 0;
 }

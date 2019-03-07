@@ -91,6 +91,7 @@
     <ClInclude Include="widgets_test\CaptionWidgetsTest.h" />
     <ClInclude Include="widgets_test\ContourWidgetsTest.h" />
     <ClInclude Include="widgets_test\ImageWidgetsTest.h" />
+    <ClInclude Include="widgets_test\Rib3DView.h" />
     <ClInclude Include="widgets_test\TestWidgetsBase.h" />
     <ClInclude Include="widgets_test\TextWidgetsTest.h" />
   </ItemGroup>
@@ -109,6 +110,7 @@
     <ClCompile Include="widgets_test\CaptionWidgetsTest.cpp" />
     <ClCompile Include="widgets_test\ContourWidgetsTest.cpp" />
     <ClCompile Include="widgets_test\ImageWidgetsTest.cpp" />
+    <ClCompile Include="widgets_test\Rib3DView.cpp" />
     <ClCompile Include="widgets_test\TestWidgetsBase.cpp" />
     <ClCompile Include="widgets_test\TextWidgetsTest.cpp" />
   </ItemGroup>
