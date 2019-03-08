@@ -326,9 +326,16 @@ void CDicomView::ShowDicomFile(std::string folder)
     m_imageViewer->SetColorLevel(30);
 
     //////////////////////////////////////////////////////////////////////////
-    m_imageViewer->SetSlice(4);
-    m_imageViewer->SetSliceOrientationToXY();
-
+    static int use_orientation = 2;
+    if (1 == use_orientation) {
+	    m_imageViewer->SetSliceOrientationToXY();	    
+    } else if(2 == use_orientation){
+        m_imageViewer->SetSliceOrientationToXZ();
+    } else if(3 == use_orientation){
+        m_imageViewer->SetSliceOrientationToYZ();
+    }
+    // 主要是设置下slice的range
+    myInteractorStyle->SetImageViewer(m_imageViewer);
 
     m_imageViewer->Render();
     m_imageViewer->GetRenderer()->ResetCamera();
