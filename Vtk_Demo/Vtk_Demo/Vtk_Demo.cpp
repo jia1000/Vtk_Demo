@@ -13,6 +13,7 @@
 #include "widgets_test/ContourWidgetsTest.h"
 #include "widgets_test/ImageWidgetsTest.h"
 #include "widgets_test/Rib3DView.h"
+#include "data_object_test/TrianglePoints.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -44,10 +45,14 @@ int _tmain(int argc, _TCHAR* argv[])
     //widgets_test.ShowWidgets_Test();
     //return 0;
 
-    Rib3DView widgets_test;
-    widgets_test.ShowWidgets_Test();
+    //Rib3DView widgets_test;
+    //widgets_test.ShowWidgets_Test();
+    //return 0;
+
+    CTrianglePoints tp("triangle.vtk");
     return 0;
 #endif 
+    
 
 	return 0;
 }

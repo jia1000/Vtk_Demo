@@ -60,6 +60,9 @@
     <ClInclude Include="widgets_test\Rib3DView.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="data_object_test\TrianglePoints.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -102,6 +105,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="widgets_test\Rib3DView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="data_object_test\TrianglePoints.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -81,6 +81,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="data_object_test\TrianglePoints.h" />
     <ClInclude Include="DicomSplitView.h" />
     <ClInclude Include="DicomView.h" />
     <ClInclude Include="SplitView.h" />
@@ -96,6 +97,7 @@
     <ClInclude Include="widgets_test\TextWidgetsTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="data_object_test\TrianglePoints.cpp" />
     <ClCompile Include="demo_code.cpp" />
     <ClCompile Include="DicomSplitView.cpp" />
     <ClCompile Include="DicomView.cpp" />
