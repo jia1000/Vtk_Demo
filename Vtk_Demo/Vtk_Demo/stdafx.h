@@ -104,4 +104,7 @@
 
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
+
+#include <vtkBMPReader.h>
+#include <vtkImageShrink3D.h>
 // TODO: 在此处引用程序需要的其他头文件
